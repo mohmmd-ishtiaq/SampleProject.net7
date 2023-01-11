@@ -10,8 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: UseDotNet@2
+  inputs:
+    version: '7.x'
+    performMultiLevelLookup: true
+    includePreviewVersions: true # Required for preview versions
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
